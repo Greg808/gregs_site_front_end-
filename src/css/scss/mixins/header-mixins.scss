@@ -1,0 +1,5 @@
+@mixin nav__link {
+  color: $color-m;
+  text-decoration: none;
+  @content
+}

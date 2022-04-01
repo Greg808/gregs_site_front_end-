@@ -1,0 +1,65 @@
+.container {
+  display: grid;
+}
+
+.header {
+  &__inner {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2.6em;
+  }
+
+  &__brand {
+    @include nav__link;
+    display: flex;
+    align-items: center;
+    span {
+      font-family: $font-f-hl;
+    }
+  }
+
+  &__nav {
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-content: end;
+
+      li {
+        text-align: end;
+
+        a {
+          @include nav__link {
+            font-weight: $font-w-sb;
+            &:hover {
+              color: $color-hl-p;
+              text-decoration: underline;
+              text-underline-offset: 0.313em;
+              text-decoration-color: $color-hl-s;
+              text-decoration-thickness: 0.2em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.skip-link {
+  background: $color-m;
+  color: $color-bg;
+  font-weight: 400;
+  left: 10%;
+  padding: 1em;
+  text-decoration: none;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  &:focus {
+    transform: translateY(0%);
+  }
+}
+
+
+
+
